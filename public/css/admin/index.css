@@ -1,0 +1,30 @@
+.sticky {
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+.manueStick {
+    position: relative;
+    right: 0;
+    border-bottom: 1px;
+}
+
+#navbarCollapse {
+    top: 0;
+}
+
+.hideManues {
+    display: none;
+}
+
+.showManues {
+    display: block;
+}
+
+.clicked {
+    border-color: gray;
+}
+
+.animated {}
