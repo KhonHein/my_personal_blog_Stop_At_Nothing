@@ -1,0 +1,10 @@
+.addPostContainer {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.category-side {
+    /* border-right: 1px solid; */
+}
+
+.psot-side {}

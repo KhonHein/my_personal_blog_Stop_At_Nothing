@@ -16,10 +16,19 @@ manueStick.addEventListener('click', () => {
     }
 });
 
-// // profile page
-// let mainDiv = document.querySelector(`.mainDiv`);
-// let myProfile = document.querySelector(`#myProfile`);
-// let myProfilePage = ` My Pro `;
-// myProfile.addEventListener('click', () => {
-//     mainDiv.innerHTML(myProfilePage);
-// });
+
+
+//image preview
+function previewImage() {
+    const preview = document.querySelector('.selectPreviewImage');
+    const file = document.querySelector('.inputPreviewImage').files[0];
+    const reader = new FileReader();
+    reader.addEventListener("load", function() {
+        preview.src = reader.result;
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+
+}

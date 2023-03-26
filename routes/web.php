@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProUserController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersAuthController;
 
@@ -20,18 +22,31 @@ use App\Http\Controllers\UsersAuthController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
+    'auth'
 ])->group(function () {
     Route::get('/dashboard', [DashboardController::class,'checkRole'])->name('dashboard');
 
     // admin
     Route::middleware(['adminAuthMiddleware'])->group(function () {
-        Route::get('/home',[AdminController::class,'adminHome'])->name('admin#home');
-        Route::get('/profile_page/{id}',[AdminController::class,'adminProfilePage'])->name('admin#profilePage');
+        Route::get('/index',[AdminController::class,'adminIndex'])->name('admin#home');
+        Route::get('/profile_page',[AdminController::class,'adminProfilePage'])->name('admin#profilePage');
+        Route::get('/admin/home',[AdminController::class,'adminHome'])->name('admin#homePage');
+
+        //admin profile update
+        Route::post('/profile_update',[AdminController::class,'adminProfileUpdate'])->name('admin#profileUpdate');
+        Route::post('/password_update',[AdminController::class,'adminPasswordUpdate'])->name('admin#passwordUpdate');
+
+        //add-post page
+        Route::get('/add_post',[AdminController::class,'adminAddPost'])->name('admin#addPostPage');
+
+        //category
+        Route::post('/add_category',[CategoryController::class,'adminAddCategory'])->name('admin#addCategory');
+
+        // post
+        Route::post('add_post',[PostController::class,'adminAddPost'])->name('admin#addPost');
     });
 
     //pro

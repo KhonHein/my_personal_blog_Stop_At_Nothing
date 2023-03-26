@@ -1,0 +1,79 @@
+.containerHome {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    /* margin: 5px 0px 5px 10; */
+}
+
+.left-pane,
+.right-pane {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #fff;
+    overflow-x: hidden;
+}
+
+.left-pane::-webkit-scrollbar,
+.right-pane::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.left-pane::-webkit-scrollbar-thumb,
+.right-pane::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+}
+
+.left-pane {
+    background-color: #ccc;
+    flex: 1 1 15%;
+}
+
+.right-pane {
+    background-color: #e0e0e0;
+    flex: 1 1 85%;
+}
+
+.stickyNavbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.manueStick {
+    display: none;
+}
+
+
+/* Media query to adjust the layout for smaller screens */
+
+@media (max-width: 768px) {
+    .containerHome {
+        flex-wrap: wrap;
+    }
+    .left-pane,
+    .right-pane {
+        flex: 1 1 100%;
+    }
+    .left-pane {
+        display: none;
+    }
+    .manueStick {
+        display: block;
+    }
+    .showMenu {
+        display: block;
+        display: flex;
+    }
+    .hiddenMenu {
+        display: none;
+    }
+    .left-pane {
+        width: auto;
+        height: 25%;
+    }
+    .right-pane {
+        height: 100%;
+    }
+}

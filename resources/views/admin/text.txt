@@ -1,0 +1,46 @@
+ @extends('admin.master')
+@section('title','AdminDashboard')
+@section('content')
+<!--Main Section Start-->
+<div class="container-xxl py-3 mb-3">
+    <button class="btn btn-dark ms-4 position-fixed" onclick="history.back()"><i class="fa-solid fa-left-long" class="backArrow"></i></button>
+    <div class="container-fluid my-3 py-1 px-lg-1 w3-container w3-center w3-animate-zoom">
+        <div class="row g-5 py-1">
+            <span class="mx-auto mt-2 text-black fw-bold categorySite border-end-0">
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">Myanmar</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">English</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">Science</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">Math</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">ICT</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">Myanmar</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">English</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">Science</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">Math</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">ICT</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">Myanmar</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">English</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">Math</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">ICT</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">Myanmar</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">English</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">Science</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">Math</button>
+                <button class="btn btn-dark btn-sm mb-2 mx-auto">ICT</button>
+
+            </span>
+            <div class="col-lg-6 d-flex m-auto text-center text-lg-start rounded border-radius-2 mt-2" id="postDiv">
+                <img class="img-fluid" src="{{ asset('img/coverImg.png') }}" alt="">
+            </div>
+            <div class="col-lg-3 text-center text-lg-start bg-success">
+                <h1 class="text-black fw-bold mb-4">This MyEducation is for all myanmar students. </h1>
+                <h4 class="text-black fw-bold">Don't Stop At Nothing!</h4>
+                <p class="text-white pb-3 animated zoomIn">Tempor rebum no at dolore lorem clita rebum rebum ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo amet ipsum vero ipsum clita lorem</p>
+                <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Free Quote</a>
+                <a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Main Section end -->
+@endsection
