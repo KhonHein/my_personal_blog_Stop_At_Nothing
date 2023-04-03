@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title','profile')
+@section('title','details')
 @section('content')
 <!--Main Section Start-->
 <div class="container-xxl py-3 mb-5">
@@ -122,9 +122,10 @@
                     {{ $post->description }}
                 </textarea>
 
-                <button type="submit" onclick="confirm('It will change your post information !')" class="btn btn-outline-danger text-white py-sm-3 px-sm-5 rounded-pill animated slideInRight">Edit And Save</button>
+                <button type="submit" onclick="confirm('It will change your post information !')" class="btn btn-outline-warning text-white py-sm-3 px-sm-5 rounded-pill animated slideInRight">Edit And Save</button>
             </div>
         </form>
+        <a href="{{ route('admin#deletePost',$post->id) }}" onclick="confirm('It will delete your post !')" class="btn btn-outline-danger text-white py-sm-3 px-sm-5 rounded-pill animated">Delete this post</a>
     </div>
 </div>
 <!--Main Section end -->

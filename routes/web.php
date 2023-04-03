@@ -52,7 +52,7 @@ Route::middleware([
         Route::post('add_post',[PostController::class,'adminAddPost'])->name('admin#addPost');
         Route::get('post_details/{id}',[PostController::class,'postDetails'])->name('admin#postDetails');
         Route::post('post_edit',[PostController::class,'postEdit'])->name('admin#postEdit');
-
+        Route::get('post_delete/{id}',[PostController::class,'postDelete'])->name('admin#deletePost');
          //show in category
          Route::get('admin/select/category/{key}',[AdminController::class,'selectCategory'])->name('admin#electByCategory');
 

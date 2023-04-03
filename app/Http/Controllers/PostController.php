@@ -93,6 +93,12 @@ class PostController extends Controller
         return back()->with(['editSuccess' => ' , you edited your post information']);
     }
 
+    //post delete
+    public function postDelete($id){
+        Post::where('id',$id)->delete();
+        return redirect()->route('admin#homePage');
+    }
+
     //post validation check
     private function postValidationCheck(Request $request){
         $rules=[
