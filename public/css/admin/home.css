@@ -15,8 +15,8 @@
 
 .left-pane::-webkit-scrollbar,
 .right-pane::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
 }
 
 .left-pane::-webkit-scrollbar-thumb,
@@ -26,7 +26,8 @@
 }
 
 .left-pane {
-    background-color: #ccc;
+    /* background-color: #ccc; */
+    background-color: #6C757D;
     flex: 1 1 15%;
 }
 
@@ -76,4 +77,18 @@
     .right-pane {
         height: 100%;
     }
+}
+
+.hoverOverTheImage:hover,
+hoverOverTheImage:focus {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
+.listImg {
+    width: 200px;
+    height: 150px;
 }

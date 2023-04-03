@@ -7,42 +7,44 @@
     <title>Regiser</title>
     <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
 </head>
-<body>
-   <div class="container-fluid row m-auto my-4  justify-content-between" style="width:800px; height:auto;">
+<body class="bg-secondary">
+   <div class="container-fluid row m-auto my-4  justify-content-between" style="width:500px; height:auto;">
     <div class="m-auto text-center fs-2 fw-bold">Register</div>
-    <form method="POST" action="{{ route('register') }}" class="col-md-6 offset-3 m-auto  ">
+    <form method="POST" action="{{ route('register') }}" class="col-md-8 offset-2 m-auto  ">
         @csrf
 
-        <div>
+        <div class="mx-auto" style="width:300px;">
             <x-label for="name" value="{{ __('Name') }}" />
-            <x-input id="name" class="block mt-1 w-full form-control border-success" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <x-input id="name" class="form-control block mt-1 w-full  border-success" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
         </div>
 
-        <div class="mt-4">
+        <div class="mt-4 mx-auto" style="width:300px;">
             <x-label for="email" value="{{ __('Email') }}" />
-            <x-input id="email" class="block mt-1 w-full form-control border-success" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            <x-input id="email" class="form-control block mt-1 w-full  border-success" type="email" name="email" :value="old('email')" required autocomplete="username" />
         </div>
-        <div>
+
+        <div class="mt-4 mx-auto" style="width:300px;">
             <x-label for="address" value="{{ __('Address') }}" />
-            <x-input id="address" class="block mt-1 w-full form-control border-success" type="text" name="address" :value="old('address')" required autofocus autocomplete="address" />
+            <x-input id="address" class="form-control block mt-1 w-full  border-success" type="text" name="address" :value="old('address')" required autofocus autocomplete="address" />
         </div>
-        <div>
+
+        <div class="mt-4 mx-auto" style="width:300px;">
             <x-label for="phone" value="{{ __('Phone') }}" />
-            <x-input id="phone" class="block mt-1 w-full form-control border-success" type="text" name="phone" :value="old('phone')" required autofocus autocomplete="phone" />
+            <x-input id="phone" class="form-control block mt-1 w-full  border-success" type="text" name="phone" :value="old('phone')" required autofocus autocomplete="phone" />
         </div>
 
-        <div class="mt-4">
+        <div class="mt-4 mx-auto" style="width:300px;">
             <x-label for="password" value="{{ __('Password') }}" />
-            <x-input id="password" class="block mt-1 w-full form-control border-success" type="password" name="password" required autocomplete="new-password" />
+            <x-input id="password" class="form-control block mt-1 w-full  border-success" type="password" name="password" required autocomplete="new-password" />
         </div>
 
-        <div class="mt-4">
+        <div class="mt-4 mx-auto" style="width:300px;">
             <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-            <x-input id="password_confirmation" class="block mt-1 w-full form-control border-success" type="password" name="password_confirmation" required autocomplete="new-password" />
+            <x-input id="password_confirmation" class="form-control block mt-1 w-full  border-success" type="password" name="password_confirmation" required autocomplete="new-password" />
         </div>
 
         @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-            <div class="mt-4">
+            <div class="mt-4 mx-auto">
                 <x-label for="terms">
                     <div class="flex items-center">
                         <x-checkbox name="terms" id="terms" required />
@@ -58,12 +60,12 @@
             </div>
         @endif
 
-        <div class="flex items-center justify-end mt-4">
-            <a class=" text-decoration-none text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Lognin?') }}
+        <div class="flex items-center d-flex justify-content-between mt-4">
+            <a class="btn btn-secondary  my-2 text-warning rounded-pill py-2 px-4" href="{{ route('login') }}">
+                {{ __('Login ?') }}
             </a>
 
-            <x-button class="ms-5 btn border-danger btn-dark ">
+            <x-button class="ms-5 my-2  btn border-danger btn-dark ">
                 {{ __('Register') }}
             </x-button>
         </div>

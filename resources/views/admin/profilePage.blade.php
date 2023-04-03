@@ -91,8 +91,11 @@
                 <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-1 animated slideInLeft" data-bs-toggle="modal" data-bs-target="#goToPassword">Update Password</a>
             </div>
         </form>
-
-        <!-- Full Screen Search Start -->
+        <form action="{{ route('logout') }}" method="post">
+            @csrf
+            <button type="submit" class="btn btn-outline-danger d-flex justify-content-center py-sm-3 px-sm-5 rounded-pill animated slideInRight">Loggout</button>
+        </form>
+        <!-- Full Screen Password Start -->
         <form action="{{ route('admin#passwordUpdate') }}" method="POST" class="modal fade" id="goToPassword" tabindex="-1">
             @csrf
             <div class="modal-dialog modal-fullscreen">
@@ -127,7 +130,7 @@
                 </div>
             </div>
         </form>
-        <!-- Full Screen Search End -->
+        <!-- Full Screen password End -->
     </div>
 </div>
 <!--Main Section end -->

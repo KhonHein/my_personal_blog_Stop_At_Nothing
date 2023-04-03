@@ -35,7 +35,7 @@
         <div class="container-xxl position-relative p-0">
             <nav class=" bg-secondary border-bottom navbar sticky navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
-                    <h1 class="m-0">MY<span class="fs-5">Education</span></h1>
+                    <h1 class="m-0">MY<span class="fs-5">Personal Blog</span></h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <h5 class="text-black fw-bold d-flex m-auto">Stop At Nothing </h5>
@@ -45,7 +45,7 @@
                 <div class="collapse navbar-collapse " id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 d-flex justify-content-around" >
                         <a href="{{ route('admin#homePage') }}" title="home" class="mx-2 nav-item nav-link active"><i class="fa-solid fa-house fs-4 text-black "></i></a>
-                        <a href="" title="group" class="mx-2 nav-item nav-link"><i class="fa-solid fa-users-line fs-4 text-black "></i></a>
+                        <a href="{{ route('admin#changeRole') }}" title="user-list" class="mx-2 nav-item nav-link"><i class="fa-solid fa-users-line fs-4 text-black "></i></a>
                         <a href="{{ route('admin#addPostPage') }}" title="add-posts" class="mx-2 nav-item nav-link"><i class="fa-solid fa-file-circle-plus fs-4 text-black "></i></a>
                     </div>
                     <butaton type="button" class="btn text-blue fs-4 ms-3" data-bs-toggle="modal" data-bs-target="#goToSearchModal"><i class="fa fa-search"></i></butaton>
@@ -64,7 +64,7 @@
         <!-- Navbar  End -->
 
         <!-- Full Screen Search Start -->
-        <div class="modal fade" id="goToSearchModal" tabindex="-1">
+        <form action="{{ route('admin#homePage') }}" method="GET"  class="modal fade" id="goToSearchModal" tabindex="-1">
             <div class="modal-dialog modal-fullscreen">
                 <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
                     <div class="modal-header border-0">
@@ -72,13 +72,13 @@
                     </div>
                     <div class="modal-body d-flex align-items-center justify-content-center">
                         <div class="input-group" style="max-width: 600px;">
-                            <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
-                            <button class="btn btn-secondary px-4"><i class="bi bi-search"></i></button>
+                            <input name="key" type="text" class="form-control text-white fs-4 bg-transparent border-light p-3" placeholder="Type search keyword">
+                            <button type="submit" class="btn btn-primary px-4"><i class="fa fa-search"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
         <!-- Full Screen Search End -->
 
          <!-- Footer Start -->
@@ -102,22 +102,22 @@
                         <h5 class="text-white mb-4">Project Gallery</h5>
                         <div class="row g-2">
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-1.jpg" alt="Image">
+                                <img class="img-fluid" src="{{ asset('img/portfolio-1.jpg') }}" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-2.jpg" alt="Image">
+                                <img class="img-fluid" src="{{  asset('img/portfolio-2.jpg') }}" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-3.jpg" alt="Image">
+                                <img class="img-fluid" src="{{  asset('img/portfolio-3.jpg') }}" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-4.jpg" alt="Image">
+                                <img class="img-fluid" src="{{  asset('img/portfolio-4.jpg') }}" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-5.jpg" alt="Image">
+                                <img class="img-fluid" src="{{  asset('img/portfolio-5.jpg') }}" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-6.jpg" alt="Image">
+                                <img class="img-fluid" src="{{  asset('img/portfolio-6.jpg') }}" alt="Image">
                             </div>
                         </div>
                     </div>
@@ -136,17 +136,6 @@
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                             &copy; <a class="border-bottom" href="#">Stop At Nothing</a>, All Right Reserved.
-
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -163,11 +152,13 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-
-    <!-- Template Javascript -->
-    <script src="{{ asset('js/admin/index.js')}}"></script>
-    @yield('jsLink')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+<!-- Template Javascript -->
+<script src="{{ asset('js/admin/index.js')}}"></script>
+<!-- JQuery link-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@yield('script')
 </html>
+

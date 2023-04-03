@@ -1,15 +1,27 @@
-//image preview
-function previewPostImage() {
-    // const preview = document.querySelector('.coverImage');
-    // const file = document.querySelector('.inputCoverImage').files[0];
-    // const reader = new FileReader();
-    // reader.addEventListener("load", function() {
-    //     preview.src = reader.result;
-    // }, false);
+{
+    /* < script >
+        $(document).ready(function() {
+            $('.statusChange').change(function() {
+                $currentStatus = $(this).val(); //$currentStatus = $('.statusChange').val();
+                $parentNode = $(this).parents('tr');
+                $orderCode = $parentNode.find('.orderCode').html();
 
-    // if (file) {
-    //     reader.readAsDataURL(file);
-    // }
-    console.log('OK');
+                $data = {
+                    'status': $currentStatus,
+                    'orderCode': $orderCode
+                };
 
+                $.ajax({
+                    type: 'get',
+                    url: 'http://127.0.0.1:8000/admin/order/ajax/change/status',
+                    data: $data,
+                    dataType: 'json',
+                    success: function(response) {
+
+                    }
+                })
+
+            })
+        }) <
+        /script> */
 }

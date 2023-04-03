@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -53,8 +54,21 @@ class AdminController extends Controller
     //direct admin home page
     public function adminHome(){
         $categories = Category::get();
-        return view('admin.home',compact('categories'));
+        $posts =Post::when(request('key'),function($query){
+            $query->orWhere('title','like','%'.request('key').'%')
+                  ->orWhere('description','like','%'.request('key').'%');
+        })->get();
+        return view('admin.home',compact('categories','posts'));
     }
+
+        //select by category
+        public function selectCategory($key){
+            $categories = Category::get();
+            $posts =Post::where('category', $key)->get();
+
+            return view('admin.home',compact('categories','posts'));
+        }
+
     //admin password update
     public function adminPasswordUpdate(Request $request){
         $validator = $this->passwordValidation($request);
@@ -78,6 +92,12 @@ class AdminController extends Controller
     public function adminAddPost(){
         $categories =Category::get();
         return view('admin.add-post',compact('categories'));
+    }
+
+    //direct user list and change role
+    public function changeRole(){
+        $users = User::get();
+        return view('admin.changeRole',compact('users'));
     }
 
     //porfile update valication

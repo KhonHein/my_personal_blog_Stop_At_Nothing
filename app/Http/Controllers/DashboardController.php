@@ -14,7 +14,7 @@ class DashboardController extends Controller
             }else if(Auth::user()->role === 'pro'){
                 return view('pro.index');
             }else if(Auth::user()->role === 'user'){
-                return view('user.index');
+                return redirect()->route('users#homePage');
             }else{
                 return view('auth.login');
             }

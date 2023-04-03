@@ -58,3 +58,56 @@ body {
     margin-left: 500px;
     background-color: red;
 }
+
+.liked {
+    color: red;
+    transition: transform 0.9s ease-in-out;
+    -webkit-transition: transform 0.9s ease-in-out;
+    -moz-transition: transform 0.9s ease-in-out;
+    -ms-transition: transform 0.9s ease-in-out;
+    -o-transition: transform 0.9s ease-in-out;
+}
+
+.mouseHoverCSS:hover,
+mouseHoverCSS:focus {
+    color: red;
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+}
+
+.kissedIcon {
+    display: none;
+}
+
+.kissed {
+    display: inline-block;
+    color: yellow;
+}
+
+
+/* comment box */
+
+.commentBox {
+    display: none;
+}
+
+.commentIconHide {
+    display: none;
+}
+
+.showComments {
+    display: block;
+}
+
+.fontTimeNewItalic {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.khonImg {
+    width: 250px;
+    height: auto;
+}

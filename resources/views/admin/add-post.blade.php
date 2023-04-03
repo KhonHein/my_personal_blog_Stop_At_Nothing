@@ -44,8 +44,9 @@
                     <input type="file" name="postImage" title="post-image" id="imgInputFile" onchange="previewImage()" class="inputPreviewImage my-1 rounded-3 border border-light" style="width:200px; height:tuto;">
                     @error('postImage')<label fro="imgInputFile" class="text-danger fw-bold fs-6">{{ $message }}</label> @enderror
 
-                    <label fro="postSound" class="text-black fw-bold">Add voice </label>
+
                     <input type="file" name="postSound" title="post-sound" id="postSound" class="my-1 rounded-3 border border-light" style="width:200px; height:tuto;">
+                    <label fro="postSound" class="text-black fw-bold">Add voice </label>
                     @error('postSound') <label fro="postSound" class="text-danger fw-bold fs-6">{{ $message }}</label> @enderror
 
                 </div>
@@ -75,9 +76,6 @@
     </div>
 </div>
 <!--Main Section end -->
-@endsection
-@section('jsLink')
-<script src="{{ asset('js/admin/add-post.js')}}"></script>
 @endsection
 
 
